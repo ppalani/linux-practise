@@ -1,1 +1,18 @@
 sudo addgroup tomcat
+sudo apt update
+
+sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+
+
+cd /tmp
+
+curl -O url of tomcat tz
+
+sudo tar xzvf /tmp/apache-tomcat-9.0.*tar.gz -C /opt/tomcat --strip-components=1
+
+
+the first argument -x/--extract is always required as the first argument when extracting an archive...
+"z" is used to "filter the archive through gzip".. is this only necessary for *.gz files?,Yes the "z" is only needed for tar.gz files.     
+"j", you need the "j" argument, For tar.bz2 files
+"v" is for verbose, to display a list of files/directories involved.. and is probably just personal preferance, right?
+"f" is apparently the option to specify the archive file... but in the documentation for this command it says that the last argument in this command is always the filename.. am i misunderstanding this? does that mean you dont need to specify -f?
